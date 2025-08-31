@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--プロジェクトのルート要素を定義している。xmlnsやxmlns:xsiはXMLの名前空間を指す。-->
+    <!--xsi:schemaLocationでPOMファイルの構造やルールを定義するスキーマの場所を指す。-->
+
+<modelVersion>4.0.0</modelVersion> <!-- MavenのPOM(Project Object Model)ファイルのバージョンを指す -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.0</version> <relativePath/> </parent>
+        <!--親プロジェクトを指す。Spring Bootのスタータープロジェクトを使用している。-->
+        <!--relativePathは親POMの場所を指定するが、空の場合はデフォルトの場所を使う。この設定で、SpringBootの標準的な設定や依存関係管理を親プロジェクトから継承できる-->
+
+    <groupId>com.example</groupId>
+    <artifactId>my-app</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <!--Mavenで成果物を一意に識別するために使われる-->
+
+        <properties> <!--プロジェクト全体で使う設定値や変数を書く。例として、Javaのバージョン、依存ライブラリのバージョン、プラグインのバージョンを書く。こうすることで、他の場所で`${java.version}`のように参照できる。-->
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

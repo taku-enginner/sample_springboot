@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    # Dockerfileが置いてあるディレクトリを指定
+    build: .
+    # コンテナ名を指定
+    container_name: springboot_app
+    # ローカルのポートとコンテナのポートをマッピング
+    ports:
+      - "8080:8080"
+    # ローカルのプロジェクトディレクトリをコンテナ内にマウント
+    volumes:
+      - .:/app
+    # コンテナ起動時に実行するコマンド
+    # mvn spring-boot:run コマンドでアプリケーションを起動
+    command: ["mvn", "spring-boot:run"]
